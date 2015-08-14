@@ -65,12 +65,12 @@
                         <div class="component-main">
                             <dl class="dl-horizontal">
                               <dt>Subtotal</dt>
-                              <dd>0.00</dd>
+                              <dd>{{ subTotal | currency }}</dd>
                               <dt>Tip</dt>
-                              <dd>0.00</dd>
+                              <dd>{{ tip | currency}}</dd>
                               <hr>
                               <dt>Total</dt>
-                              <dd>0.00</dd>
+                              <dd>{{ total | currency}}</dd>
                             </dl>
                         </div>
                     </div>
