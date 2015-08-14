@@ -1,13 +1,104 @@
 <!doctype html>
-<html lang="en" ng-app="">
+<html lang="en" ng-app="waitstaffApp">
 <head>
     <meta charset="UTF-8">
     <title>Waitstaff Calculator</title>
     <link rel="stylesheet" href="style.css"></link>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js" type="text/javascript"></script>
     <script src="app.js" type="text/javascript"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 <body>
-
+    <div class="container" ng-controller="waitstaffController">
+        <div class="row">
+            <header>
+                <h1 class="text-center">Waitstaff Calculator</h1>
+            </header>
+        </row>
+        <div class="row">
+            <div class="col-md-6 border">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="component-header">
+                            <h3 class="text-center">Enter The Meal Details</h3>
+                        </div>
+                        <div class="component-main">
+                            <form name="mealTotal" class="form-horizontal" novalidate>
+                                <div class="group-bottom-margin">
+                                    <label class="col-sm-4 control-label" for="inputAmount">Base Meal Price $</label>
+                                    <div class="input-group col-sm-4">
+                                      <input type="number" class="form-control" id="inputAmount" placeholder="0.00" ng-model="baseMealPrice">
+                                      <span id="helpBlock" class="help-block">This will be the error</span>
+                                    </div>    
+                                </div>
+                                <div class="group-bottom-margin">
+                                    <label class="col-sm-4 control-label" for="inputAmount">Tax Rate %</label>
+                                    <div class="input-group col-sm-4">
+                                      <input type="number" class="form-control" id="inputAmount" ng-model="taxRate">
+                                      <span id="helpBlock" class="help-block">This will be the error</span>
+                                    </div>
+                                </div>
+                                <div class="group-bottom-margin">
+                                    <label class="col-sm-4 control-label" for="inputAmount">Tip %</label>
+                                    <div class="input-group col-sm-4">
+                                      <input type="number" class="form-control" id="inputAmount" ng-model="tipAmount" >
+                                      <span id="helpBlock" class="help-block">This will be the error</span>
+                                    </div>
+                                </div>
+                                <div class="pull-right button-group-margin">
+                                    <button type="submit" class="btn btn-primary" ng-click="submit()">Submit</button>
+                                    <button type="button" class="btn btn-danger">Cancel</button>
+                                </div>
+                                <div class="clear"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 border">
+                <div class="row">
+                    <div class="col-md-12 column-padding">
+                        <div class="component-header">
+                            <h3 class="text-center">Customer Charges</h3>
+                        </div>
+                        <div class="component-main">
+                            <dl class="dl-horizontal">
+                              <dt>Subtotal</dt>
+                              <dd>0.00</dd>
+                              <dt>Tip</dt>
+                              <dd>0.00</dd>
+                              <hr>
+                              <dt>Total</dt>
+                              <dd>0.00</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <div class="row component-top-margin">
+                    <div class="col-md-12 column-padding">
+                        <div class="component-header">
+                            <h3 class="text-center">My Earnings Info</h3>
+                        </div>
+                        <div class="component-main">
+                            <dl class="dl-horizontal">
+                              <dt>Tip Total</dt>
+                              <dd>0.00</dd>
+                              <dt>Meal Count</dt>
+                              <dd>0</dd>
+                              <dt>Average Tip Per Meal</dt>
+                              <dd>0.00</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <div class="row component-top-margin">
+                    <div class="col-md-12">
+                        <button type="button" class="btn btn-warning pull-right">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
