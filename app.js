@@ -16,9 +16,9 @@ function waitstaffController($scope){
 		var baseMealPrice = $scope.baseMealPrice;
 		var taxRate = $scope.taxRate;
 		var tipPercentage = $scope.tipPercentage;
+		$scope.mealCount = mealCount += 1;
 		calculateTip(baseMealPrice, taxRate, tipPercentage);
 		tipTotal(baseMealPrice, tipPercentage);
-		$scope.mealCount = mealCount += 1;
 	}
 	function calculateTip(bmp, tr, t){
 		$scope.subTotal = bmp + (bmp * (tr / 100));
