@@ -42,7 +42,7 @@
                                 <div class="group-bottom-margin">
                                     <label class="col-sm-4 control-label" for="inputAmount">Tip %</label>
                                     <div class="input-group col-sm-4">
-                                      <input type="number" class="form-control" id="inputAmount" ng-model="tipAmount" >
+                                      <input type="number" class="form-control" id="inputAmount" ng-model="tipPercentage" >
                                       <span id="helpBlock" class="help-block">This will be the error</span>
                                     </div>
                                 </div>
@@ -67,7 +67,7 @@
                               <dt>Subtotal</dt>
                               <dd>{{ subTotal | currency }}</dd>
                               <dt>Tip</dt>
-                              <dd>{{ tip | currency}}</dd>
+                              <dd>{{ tipCash | currency}}</dd>
                               <hr>
                               <dt>Total</dt>
                               <dd>{{ total | currency}}</dd>
@@ -83,11 +83,11 @@
                         <div class="component-main">
                             <dl class="dl-horizontal">
                               <dt>Tip Total</dt>
-                              <dd>0.00</dd>
+                              <dd>{{tipTotal | currency}}</dd>
                               <dt>Meal Count</dt>
-                              <dd>0</dd>
+                              <dd>{{mealCount}}</dd>
                               <dt>Average Tip Per Meal</dt>
-                              <dd>0.00</dd>
+                              <dd>{{averageTip | currency}}</dd>
                             </dl>
                         </div>
                     </div>
