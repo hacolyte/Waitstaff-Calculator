@@ -13,12 +13,22 @@ function waitstaffController($scope){
 	var tipsArr = [];
 	var mealCount = 0;
 	$scope.submit = function(){
-		var baseMealPrice = $scope.baseMealPrice;
-		var taxRate = $scope.taxRate;
-		var tipPercentage = $scope.tipPercentage;
-		$scope.mealCount = mealCount += 1;
-		calculateTip(baseMealPrice, taxRate, tipPercentage);
-		tipTotal(baseMealPrice, tipPercentage);
+		if($scope.mealTotal.$valid){
+			console.log("the form is valid");
+			var baseMealPrice = $scope.baseMealPrice;
+			var taxRate = $scope.taxRate;
+			var tipPercentage = $scope.tipPercentage;
+			$scope.mealCount = mealCount += 1;
+			calculateTip(baseMealPrice, taxRate, tipPercentage);
+			tipTotal(baseMealPrice, tipPercentage);
+			// Reset the form
+			$scope.baseMealPrice = '';
+			$scope.taxRate = '';
+			$scope.tipPercentage = '';
+			$scope.mealTotal.$setPristine();
+		}else{
+			console.log("The form is invalid");
+		}
 	}
 	function calculateTip(bmp, tr, t){
 		$scope.subTotal = bmp + (bmp * (tr / 100));
@@ -34,5 +44,14 @@ function waitstaffController($scope){
 		};
 		$scope.tipTotal = tipsTotal;
 		$scope.averageTip = (tipsTotal / mealCount);
+	}
+	$scope.cancel = function(){
+		$scope.baseMealPrice = '';
+		$scope.taxRate = '';
+		$scope.tipPercentage = '';
+		$scope.mealTotal.$setPristine();
+	}
+	$scope.reset = function(){
+
 	}
 }

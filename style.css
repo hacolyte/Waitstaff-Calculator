@@ -15,6 +15,10 @@
 	margin-top: 3.5em;
 }
 
+.help-block.error{
+	color: red;
+}
+
 .clear{
 	clear:both;
 }

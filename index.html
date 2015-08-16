@@ -28,27 +28,27 @@
                                 <div class="group-bottom-margin">
                                     <label class="col-sm-4 control-label" for="inputAmount">Base Meal Price $</label>
                                     <div class="input-group col-sm-4">
-                                      <input type="number" class="form-control" id="inputAmount" placeholder="0.00" ng-model="baseMealPrice">
-                                      <span id="helpBlock" class="help-block">This will be the error</span>
+                                      <input name="baseMealPrice" type="number" class="form-control" id="inputAmount" placeholder="0.00" ng-model="baseMealPrice" required />
+                                      <span id="helpBlock" class="help-block error" ng-if="mealTotal.$submitted && mealTotal.baseMealPrice.$error.required">Field is required</span>
                                     </div>    
                                 </div>
                                 <div class="group-bottom-margin">
                                     <label class="col-sm-4 control-label" for="inputAmount">Tax Rate %</label>
                                     <div class="input-group col-sm-4">
-                                      <input type="number" class="form-control" id="inputAmount" ng-model="taxRate">
-                                      <span id="helpBlock" class="help-block">This will be the error</span>
+                                      <input name="taxRate" type="number" class="form-control" id="inputAmount" ng-model="taxRate" required />
+                                      <span id="helpBlock" class="help-block error" ng-if="mealTotal.$submitted && mealTotal.taxRate.$error.required">Field is required</span>
                                     </div>
                                 </div>
                                 <div class="group-bottom-margin">
                                     <label class="col-sm-4 control-label" for="inputAmount">Tip %</label>
                                     <div class="input-group col-sm-4">
-                                      <input type="number" class="form-control" id="inputAmount" ng-model="tipPercentage" >
-                                      <span id="helpBlock" class="help-block">This will be the error</span>
+                                      <input name="tipPercentage" type="number" class="form-control" id="inputAmount" ng-model="tipPercentage" required />
+                                      <span id="helpBlock" class="help-block error" ng-if="mealTotal.$submitted && mealTotal.tipPercentage.$error.required">Field is required</span>
                                     </div>
                                 </div>
                                 <div class="pull-right button-group-margin">
                                     <button type="submit" class="btn btn-primary" ng-click="submit()">Submit</button>
-                                    <button type="button" class="btn btn-danger">Cancel</button>
+                                    <button type="button" class="btn btn-danger" ng-click="cancel()">Cancel</button>
                                 </div>
                                 <div class="clear"></div>
                             </form>
@@ -83,11 +83,11 @@
                         <div class="component-main">
                             <dl class="dl-horizontal">
                               <dt>Tip Total</dt>
-                              <dd>{{tipTotal | currency}}</dd>
+                              <dd>{{ tipTotal | currency }}</dd>
                               <dt>Meal Count</dt>
-                              <dd>{{mealCount}}</dd>
+                              <dd>{{ mealCount }}</dd>
                               <dt>Average Tip Per Meal</dt>
-                              <dd>{{averageTip | currency}}</dd>
+                              <dd>{{ averageTip | currency }}</dd>
                             </dl>
                         </div>
                     </div>
