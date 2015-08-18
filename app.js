@@ -52,6 +52,17 @@ function waitstaffController($scope){
 		$scope.mealTotal.$setPristine();
 	}
 	$scope.reset = function(){
-
+		tipsArr = [];
+		mealCount = 0;
+		$scope.baseMealPrice = '';
+		$scope.taxRate = '';
+		$scope.tipPercentage = '';
+		$scope.subTotal = " ";
+		$scope.tipCash = '';
+		$scope.total = '';
+		$scope.tipTotal = '';
+		$scope.averageTip = '';
+		$scope.mealTotal.$setPristine();
+		console.log(tipsArr);
 	}
 }
