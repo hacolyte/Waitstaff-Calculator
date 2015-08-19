@@ -23,9 +23,9 @@ function waitstaffController($scope){
 			calculateTip(baseMealPrice, taxRate, tipPercentage);
 			tipTotal(baseMealPrice, tipPercentage);
 			// Reset the form
-			$scope.data.baseMealPrice = '';
-			$scope.data.taxRate = '';
-			$scope.data.tipPercentage = '';
+			delete $scope.data.baseMealPrice
+			delete $scope.data.taxRate
+			delete $scope.data.tipPercentage
 			$scope.mealTotal.$setPristine();
 		}else{
 			console.log("The form is invalid");
