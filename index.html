@@ -29,21 +29,21 @@
                                     <label class="col-sm-4 control-label" for="inputAmount">Base Meal Price $</label>
                                     <div class="input-group col-sm-4">
                                       <input name="baseMealPrice" type="number" class="form-control" id="inputAmount" placeholder="0.00" ng-model="data.baseMealPrice" required />
-                                      <span id="helpBlock" class="help-block error" ng-if="mealTotal.$submitted && mealTotal.baseMealPrice.$error.required">Field is required</span>
+                                      <span id="helpBlock" class="help-block error" ng-if="submitted && mealTotal.baseMealPrice.$error.required">Field is required</span>
                                     </div>    
                                 </div>
                                 <div class="group-bottom-margin">
                                     <label class="col-sm-4 control-label" for="inputAmount">Tax Rate %</label>
                                     <div class="input-group col-sm-4">
                                       <input name="taxRate" type="number" class="form-control" id="inputAmount" ng-model="data.taxRate" required />
-                                      <span id="helpBlock" class="help-block error" ng-if="mealTotal.$submitted && mealTotal.taxRate.$error.required">Field is required</span>
+                                      <span id="helpBlock" class="help-block error" ng-if="submitted && mealTotal.taxRate.$error.required">Field is required</span>
                                     </div>
                                 </div>
                                 <div class="group-bottom-margin">
                                     <label class="col-sm-4 control-label" for="inputAmount">Tip %</label>
                                     <div class="input-group col-sm-4">
                                       <input name="tipPercentage" type="number" class="form-control" id="inputAmount" ng-model="data.tipPercentage" required />
-                                      <span id="helpBlock" class="help-block error" ng-if="mealTotal.$submitted && mealTotal.tipPercentage.$error.required">Field is required</span>
+                                      <span id="helpBlock" class="help-block error" ng-if="submitted && mealTotal.tipPercentage.$error.required">Field is required</span>
                                     </div>
                                 </div>
                                 <div class="pull-right button-group-margin">
